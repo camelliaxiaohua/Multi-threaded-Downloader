@@ -25,4 +25,14 @@ public class HttpUtils {
         httpURLConnection.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36");
         return httpURLConnection;
     }
+
+    /**
+     * 获取下载文件的名称，包含后缀。
+     * @param url
+     * @return 文件名
+     */
+    public static String getHttpFileName(String url) {
+        String downloadName = url.substring(url.lastIndexOf("/") + 1);
+        return downloadName;
+    }
 }
